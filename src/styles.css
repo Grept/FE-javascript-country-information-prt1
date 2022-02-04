@@ -72,6 +72,7 @@ li p {
 
 .country-flag {
     /*flex-grow: 0;*/
+    flex-shrink: 1;
 
 }
 

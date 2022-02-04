@@ -24,7 +24,6 @@ async function createCountryList() {
 
         //CREATE UL IN DOM
         const unorderedListElement = document.getElementById("country-list");
-        // const listItemElement = createListElement(countryList.data[6]);
 
         // FILL NEW ARRAY WITH LIST-ELEMENTS
         const listElementCollection = countryList.data.map((country) => {
