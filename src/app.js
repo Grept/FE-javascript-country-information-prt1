@@ -1,66 +1,51 @@
 import axios from "axios";
 
-console.log('Hallo daar!');
-
-// De naam van het land
-// De vlag van dat land
-// De zin: Has a population of [amount] people
-// De landen zijn gesorteert op populatie, van laag naar hoog;
-// Voeg continent kleur toe
-
-/*
-* Maak een asynchrone functie die met axios de GET-link ophaalt. Dit is een lijst.
-* */
-
 async function createCountryList() {
     try{
-        // GET COUNTRY OBJECT FROM API
-        const countryList = await axios.get("https://restcountries.com/v3/all");
+        // GET DATA ARRAY OF COUNTRY OBJECT FROM API
+        const {data: countryData} = await axios.get("https://restcountries.com/v3/all");
 
         // SORT COUNTRY LIST
-        countryList.data.sort((a, b) => {
+        countryData.sort((a, b) => {
             return a.population - b.population;
         })
 
-        //CREATE UL IN DOM
+        //GET UL FROM DOM
         const unorderedListElement = document.getElementById("country-list");
 
         // FILL NEW ARRAY WITH LIST-ELEMENTS
-        const listElementCollection = countryList.data.map((country) => {
+        const listElementCollection = countryData.map((country) => {
             const listElement = document.createElement("li");
             listElement.innerHTML = creatListElementString(country);
             return listElement;
         });
 
-        console.log(listElementCollection);
-
         // PUT EACH LIST-ELEMENT IN DOM ONE AT A TIME
-        for (let i = 0; i < listElementCollection.length; i++) {
-            unorderedListElement.appendChild(listElementCollection[i]);
-        }
+        listElementCollection.map((element) => {
+           unorderedListElement.appendChild(element);
+        });
 
     } catch (e) {
         console.log(e);
     }
 }
 
+
 function creatListElementString(country) {
     // STRING COMPONENTS
-    const countryName = country.name.common;
-    const countryPopulation = country.population;
-    const countryFlagLink = country.flags[1];
+    const {name: {common: countryName}} = country;
+    const {population: countryPopulation} = country;
+    const {flags: [, countryFlagLink]} = country;
     const countryRegionColor = getRegionColor(country);
 
     // STRING BUILDING
-    const listItemString = `
+    return `
+            <h3 class="${countryRegionColor}">${countryName}</h3>
             <div>
                 <img class="country-flag" src="${countryFlagLink}" alt="">
-                <h3 class="${countryRegionColor}">${countryName}</h3>
+                <p>Has a population of <strong>${countryPopulation}</strong> people</p>
             </div>
-            <p>Has a population of <strong>${countryPopulation}</strong> people</p>
         `;
-
-    return listItemString;
 }
 
 function getRegionColor(country) {

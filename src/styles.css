@@ -1,7 +1,112 @@
+/*GLOBAL SETTINGS*/
 body {
-    font-family: "Gill Sans";
+    font-family: "Gill Sans", sans-serif;
+    background-color: white;
+    margin: 30px;
 }
 
+/*FULL PAGE POSITIONING*/
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    /*background-color: #D14E5B;*/
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 0;
+}
+
+.world-map-section {
+    flex-grow: 1;
+}
+
+.world-map-section img {
+    width: 100%;
+}
+
+.country-list-section {
+    background-color: hsl(210, 14%, 80%);
+    border: 2px solid hsl(210, 14%, 53%);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.country-list-header {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px 0 0 0;
+}
+
+/*LIST STYLING*/
+ul {
+    column-count: 3;
+    list-style-type: none;
+    padding: 10px;
+}
+
+li {
+    background-color: hsl(36, 100%, 84%);
+    border: 2px solid hsl(36, 50%, 50%);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+
+    /*avoid column break inside li-item*/
+    /*only seems to work consistent in Chrome*/
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+
+}
+
+/*Country Header*/
+li h3 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid black;
+    margin: 10px;
+    text-align: center;
+
+}
+
+/*Country flag and population info*/
+li div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+/*Country flag*/
+li div img {
+}
+
+/*Country population info*/
+li p {
+    /*background-color: #D14E5B;*/
+    padding: 10px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.country-flag {
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+    flex-shrink: 1;
+}
+
+/*REGION COLORS*/
 .blue {
     background-color: #5575C2;
 }
@@ -22,59 +127,7 @@ body {
     background-color: #A653BA;
 }
 
-ul {
-    column-count: 3;
-    list-style-type: none;
-    /*margin: 10px;*/
-    padding: 10px;
-    background-color: lightslategrey;
+.white {
+    background-color: floralwhite;
 }
-
-li {
-    background-color: navajowhite;
-    margin-bottom: 10px;
-    /*padding: 10px;*/
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border-radius: 10px;
-
-}
-
-/*Country flag and header*/
-li div {
-    display: flex;
-    justify-content: flex-start;
-
-}
-/*Country Header*/
-li h3 {
-    /*margin: auto;*/
-    flex-grow: 1;
-    border: solid black;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-}
-
-/*Country flag*/
-li div img {
-    width: 40%;
-    height: 40%;
-    margin: 10px;
-}
-
-/*Country population info*/
-li p {
-    /*background-color: #D14E5B;*/
-    padding: 10px;
-}
-
-.country-flag {
-    /*flex-grow: 0;*/
-    flex-shrink: 1;
-
-}
-
-/*img {max-width:100px;}*/
 
