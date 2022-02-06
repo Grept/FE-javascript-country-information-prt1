@@ -10,7 +10,7 @@ async function createCountryList() {
             return a.population - b.population;
         })
 
-        //GET UL FROM DOM
+        //GET UL-ELEMENT FROM DOM
         const unorderedListElement = document.getElementById("country-list");
 
         // FILL NEW ARRAY WITH LIST-ELEMENTS
@@ -29,7 +29,6 @@ async function createCountryList() {
         console.log(e);
     }
 }
-
 
 function creatListElementString(country) {
     // STRING COMPONENTS

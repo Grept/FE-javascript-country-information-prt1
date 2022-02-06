@@ -470,7 +470,7 @@ async function createCountryList() {
         countryData.sort((a, b)=>{
             return a.population - b.population;
         });
-        //GET UL FROM DOM
+        //GET UL-ELEMENT FROM DOM
         const unorderedListElement = document.getElementById("country-list");
         // FILL NEW ARRAY WITH LIST-ELEMENTS
         const listElementCollection = countryData.map((country)=>{
@@ -479,9 +479,6 @@ async function createCountryList() {
             return listElement;
         });
         // PUT EACH LIST-ELEMENT IN DOM ONE AT A TIME
-        // for (let i = 0; i < listElementCollection.length; i++) {
-        //     unorderedListElement.appendChild(listElementCollection[i]);
-        // }
         listElementCollection.map((element)=>{
             unorderedListElement.appendChild(element);
         });
