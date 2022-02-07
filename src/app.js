@@ -49,6 +49,7 @@ function creatListElementString(country) {
                 <img class="country-flag" src="${countryFlagLink}" alt="">
                 <p>Has a population of <strong>${countryPopulation}</strong> people</p>
             </div>
+            <p class="hide"><em>Region: ${country.region}</em></p>
         `;
 }
 
