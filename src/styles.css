@@ -1,11 +1,11 @@
-/*GLOBAL SETTINGS*/
+/*--- GLOBAL SETTINGS ---*/
 body {
     font-family: "Gill Sans", sans-serif;
     background-image: linear-gradient(white, hsl(210, 14%, 80%));
     margin: 30px;
 }
 
-/*PAGE POSITIONING*/
+/*--- PAGE POSITIONING ---*/
 article {
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ h1 {
     margin: 10px 0 0 0;
 }
 
-/*LIST STYLING*/
+/*--- LIST STYLING ---*/
 ul {
     column-count: 3;
     list-style-type: none;
@@ -63,7 +63,7 @@ li {
     break-inside: avoid-column;
 }
 
-/*LIST-ITEM STYLING*/
+/*--- LIST-ITEM STYLING ---*/
 /*Country Header*/
 li h3 {
     border: solid black;
@@ -99,7 +99,7 @@ li p {
     flex-shrink: 1;
 }
 
-/*REGION COLORS*/
+/*--- REGION COLORS ---*/
 /*Headers*/
 h3.blue {
     background-color: hsl(222, 47%, 55%);
