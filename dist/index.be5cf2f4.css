@@ -57,25 +57,23 @@ li {
     flex-direction: column;
 
     /*avoid column break inside li-item*/
-    /*only seems to work consistent in Chrome*/
+    /*only seems to work consistent in Chrome (v98.0.4758.80)*/
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid-column;
-
 }
 
 /*LIST-ITEM STYLING*/
 /*Country Header*/
 li h3 {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     border: solid black;
     margin: 10px 10px 0 10px;
     text-align: center;
 
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Country flag and population info*/
@@ -83,13 +81,13 @@ li div {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 /*Country population info*/
 li p {
     padding: 10px;
     margin: 0;
+
     flex-grow: 1;
 }
 
@@ -97,32 +95,65 @@ li p {
     width: 20%;
     height: 20%;
     margin: 10px;
+
     flex-shrink: 1;
 }
 
 /*REGION COLORS*/
-.blue {
-    background-color: #5575C2;
+/*Headers*/
+h3.blue {
+    background-color: hsl(222, 47%, 55%);
 }
 
-.green {
-    background-color: #6AC487;
+h3.green {
+    background-color: hsl(139, 43%, 59%);
 }
 
-.red {
-    background-color: #D14E5B;
+h3.red {
+    background-color: hsl(354, 59%, 56%);
 }
 
-.yellow {
-    background-color: #FFD435;
+h3.yellow {
+    background-color: hsl(47, 100%, 60%);
 }
 
-.purple {
-    background-color: #A653BA;
+h3.purple {
+    background-color: hsl(288, 43%, 53%);
 }
 
-.white {
+h3.white {
     background-color: floralwhite;
+}
+
+/*List items on hover -- only seems to work fine in Firefox (v96.0.3)*/
+li:hover.blue {
+    background-color: hsl(222, 47%, 90%);
+    border-color: hsl(222, 47%, 50%);
+}
+
+li:hover.green {
+    background-color: hsl(139, 43%, 90%);
+    border-color: hsl(139, 43%, 50%);
+}
+
+li:hover.red {
+    background-color: hsl(354, 59%, 90%);
+    border-color: hsl(354, 59%, 50%);
+}
+
+li:hover.yellow {
+    background-color: hsl(47, 100%, 90%);
+    border-color: hsl(47, 100%, 50%);
+}
+
+li:hover.purple {
+    background-color: hsl(288, 43%, 90%);
+    border-color: hsl(288, 43%, 50%);
+}
+
+li:hover.white {
+    background-color: floralwhite;
+    border-color: black;
 }
 
 

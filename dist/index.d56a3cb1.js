@@ -462,37 +462,40 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-async function createCountryList() {
+async function createCountryDataList() {
     try {
         // GET DATA ARRAY OF COUNTRY OBJECT FROM API
         const { data: countryData  } = await _axiosDefault.default.get("https://restcountries.com/v3/all");
-        // SORT COUNTRY LIST
+        // SORT COUNTRY LIST BY POPULATION
         countryData.sort((a, b)=>{
             return a.population - b.population;
         });
-        //GET UL-ELEMENT FROM DOM
-        const unorderedListElement = document.getElementById("country-list");
-        // FILL NEW ARRAY WITH LIST-ELEMENTS
-        const listElementCollection = countryData.map((country)=>{
-            const listElement = document.createElement("li");
-            listElement.innerHTML = creatListElementString(country);
-            return listElement;
-        });
-        // PUT EACH LIST-ELEMENT IN DOM ONE AT A TIME
-        listElementCollection.map((element)=>{
-            unorderedListElement.appendChild(element);
-        });
+        // DISPLAY COUNTRY DATA ON THE PAGE
+        displayCountryDataList(countryData);
     } catch (e) {
         console.log(e);
     }
 }
+function displayCountryDataList(dataList) {
+    //GET UL-ELEMENT FROM DOM
+    const unorderedListElement = document.getElementById("country-list");
+    dataList.map((country)=>{
+        // CREATE LIST ELEMENT
+        const listElement = document.createElement("li");
+        listElement.setAttribute('class', getRegionColor(country));
+        // BUILD CONTENT FOR LIST ELEMENT
+        listElement.innerHTML = creatListElementString(country);
+        // PUT ELEMENT ON PAGE
+        unorderedListElement.appendChild(listElement);
+    });
+}
 function creatListElementString(country) {
-    // STRING COMPONENTS
+    // GET STRING COMPONENTS
     const { name: { common: countryName  }  } = country;
     const { population: countryPopulation  } = country;
     const { flags: [, countryFlagLink]  } = country;
     const countryRegionColor = getRegionColor(country);
-    // STRING BUILDING
+    // BUILD STRING AND RETURN
     return `
             <h3 class="${countryRegionColor}">${countryName}</h3>
             <div>
@@ -517,7 +520,7 @@ function getRegionColor(country) {
             return "white";
     }
 }
-createCountryList();
+createCountryDataList();
 
 },{"axios":"1IeuP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1IeuP":[function(require,module,exports) {
 module.exports = require('./lib/axios');
