@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async function createCountryDataList() {
+async function buildCountryDataList() {
     try{
         // GET DATA ARRAY OF COUNTRY OBJECT FROM API
         const {data: countryData} = await axios.get("https://restcountries.com/v3/all");
@@ -8,7 +8,7 @@ async function createCountryDataList() {
         // SORT COUNTRY LIST BY POPULATION
         countryData.sort((a, b) => {
             return a.population - b.population;
-        })
+        });
 
         // DISPLAY COUNTRY DATA ON THE PAGE
         displayCountryDataList(countryData);
@@ -64,7 +64,7 @@ function getRegionColor(country) {
     }
 }
 
-createCountryDataList();
+buildCountryDataList();
 
 
 

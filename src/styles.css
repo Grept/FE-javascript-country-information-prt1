@@ -56,13 +56,13 @@ li {
     display: flex;
     flex-direction: column;
 
-    /*avoid column break inside li-item*/
-    /*only seems to work consistent in Chrome (v98.0.4758.80)*/
+    /*These settings avoid column break inside li-item*/
+    /*Only seems to work consistent in Chrome (v98.0.4758.80)*/
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid-column;
 
-    transition: 2s;
+    transition: 2s ease-in-out;
 }
 
 /*--- LIST-ITEM STYLING ---*/
