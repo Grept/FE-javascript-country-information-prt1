@@ -81,12 +81,13 @@ function currencyStringBuilder(country) {
 function languageStringBuilder(country) {
     console.log("Inside Language block")
     let languageString= "";
+    const {languages} = country;
 
-    for (let i = 0; i <  country.languages.length; i++) {
-        languageString += country.languages[i].name;
-        if (i < country.languages.length - 2) {
+    for (let i = 0; i <  languages.length; i++) {
+        languageString += languages[i].name;
+        if (i < languages.length - 2) {
             languageString += ", ";
-        } else if (i < country.languages.length - 1) {
+        } else if (i < languages.length - 1) {
             languageString += " and ";
         }
     }
