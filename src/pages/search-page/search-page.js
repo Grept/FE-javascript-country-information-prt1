@@ -3,7 +3,6 @@ import axios from 'axios';
 // MAIN FUNCTION
 async function getCountryData(countryName) {
     try {
-        console.log("Inside getCountryData try-block")
         // GET DATA FROM API
         const {data: [countryData]} = await axios.get(`https://restcountries.com/v2/name/${countryName}`);
 
@@ -17,8 +16,6 @@ async function getCountryData(countryName) {
 }
 
 function displayCountryData(country) {
-    console.log("Inside displayCountryData")
-
     // GET INFO ELEMENT
     const infoContainer = document.getElementById("info-container");
 
@@ -32,12 +29,9 @@ function displayCountryData(country) {
 
     // ADD INFO ELEMENT TO PAGE
     infoContainer.appendChild(infoElement);
-
 }
 
 function createCountryInfoString(country) {
-    console.log("Inside createCountryInfoString")
-
     // GET STRING COMPONENTS
     const {flag} = country;
     const {name: countryName} = country;
@@ -63,14 +57,14 @@ function createCountryInfoString(country) {
 }
 
 function currencyStringBuilder(country) {
-    console.log("Inside Currency block")
     let currencyString = "";
+    const {currencies} = country;
 
-    for (let i = 0; i < country.currencies.length; i++) {
-        currencyString += country.currencies[i].name;
-        if (i < country.currencies.length - 2) {
+    for (let i = 0; i < currencies.length; i++) {
+        currencyString += currencies[i].name;
+        if (i < currencies.length - 2) {
             currencyString += ", ";
-        } else if (i < country.currencies.length - 1) {
+        } else if (i < currencies.length - 1) {
             currencyString += " and ";
         }
     }
@@ -79,11 +73,10 @@ function currencyStringBuilder(country) {
 }
 
 function languageStringBuilder(country) {
-    console.log("Inside Language block")
-    let languageString= "";
+    let languageString = "";
     const {languages} = country;
 
-    for (let i = 0; i <  languages.length; i++) {
+    for (let i = 0; i < languages.length; i++) {
         languageString += languages[i].name;
         if (i < languages.length - 2) {
             languageString += ", ";
@@ -99,7 +92,6 @@ function languageStringBuilder(country) {
 const form = document.getElementById("search-form");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("Event triggered: " + event.timeStamp);
     const {elements: [{value: searchQuery}]} = form;
     getCountryData(searchQuery);
 });

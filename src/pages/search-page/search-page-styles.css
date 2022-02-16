@@ -112,13 +112,13 @@ form input {
 
 }
 
-#info-container:empty{
+#info-container:empty {
     background-image: none;
 }
 
 .info-element {
     border-radius: 10px;
-    background-image: linear-gradient(120deg, white, lightgrey, grey );
+    background-image: linear-gradient(120deg, white, lightgrey, grey);
     animation: fadeIn linear 3s;
 
 }
@@ -144,6 +144,7 @@ form input {
     display: flex;
     align-items: center;
 }
+
 p.country-information {
     flex-basis: 10px;
     margin: 10px;
