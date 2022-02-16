@@ -14,13 +14,35 @@ article {
     justify-content: start;
 }
 
+/*--- NAVIGATION SECTION ---*/
+.navigation-section {
+    align-self: start;
+
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0 0 10px;
+}
+
 /*--- TITLE SECTION ---*/
 .title-section {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    margin: 10px 0 50px 0;
+    margin: 0px 0 50px 0;
 }
 
 h1 {
@@ -28,12 +50,16 @@ h1 {
     font-size: 40px;
     margin: 30px;
     text-align: center;
+    margin-top: 0;
 }
 
 .earth-img {
     width: 28%;
     height: 28%;
     max-width: 1200px;
+
+    border-radius: 150px;
+
 }
 
 /*--- SEARCH SECTION ---*/
@@ -131,6 +157,17 @@ p.country-information {
         opacity: 0;
         max-height: 0;
     }
+
+    25% {
+        opacity: 0.1;
+        max-height: 75px;
+    }
+
+    75% {
+        opacity: .5;
+        max-height: 100px;
+    }
+
     100% {
         opacity: 1;
         max-height: 400px;
