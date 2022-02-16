@@ -1,0 +1,179 @@
+/*--- GENERAL SETTINGS ---*/
+body {
+    font-family: "Gill Sans", sans-serif;
+    background-color: black;
+    margin: 30px;
+    color: white;
+}
+
+/*--- PAGE POSITIONING ---*/
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+/*--- NAVIGATION SECTION ---*/
+.navigation-section {
+    align-self: start;
+
+    display: flex;
+    align-items: center;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0 0 10px;
+}
+
+/*--- TITLE SECTION ---*/
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0px 0 50px 0;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 30px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.earth-img {
+    width: 28%;
+    height: 28%;
+    max-width: 1200px;
+
+    border-radius: 150px;
+
+}
+
+/*--- SEARCH SECTION ---*/
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*form styling*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 0 0 10px 0;
+}
+
+form input {
+    margin: 0 0 10px 0;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.submit-button {
+    margin: 0 0 10px 0;
+    padding: 0 20px 0 20px;
+}
+
+.submit-button:active {
+    background-image: linear-gradient(90deg, deeppink, rebeccapurple);
+    color: white;
+}
+
+/*--- INFO CARD STYLING ---*/
+#info-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+
+    /*This creates the border around the info-element*/
+    background-image: linear-gradient(270deg, deeppink, orange, rebeccapurple);
+    padding: 3px;
+    border-radius: 10px;
+
+    animation: fadeIn linear 1s;
+
+}
+
+#info-container:empty {
+    background-image: none;
+}
+
+.info-element {
+    border-radius: 10px;
+    background-image: linear-gradient(120deg, white, lightgrey, grey);
+    animation: fadeIn linear 3s;
+
+}
+
+.info-element > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.info-element > div > img {
+    margin: 10px;
+    width: 10%;
+    height: 10%;
+    animation: fadeIn linear 2s;
+
+}
+
+.header-and-info > h3 {
+    margin: 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+p.country-information {
+    flex-basis: 10px;
+    margin: 10px;
+    color: black;
+
+}
+
+/*--- ANIMATION KEY-FRAMES ---*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    25% {
+        opacity: 0.1;
+        max-height: 75px;
+    }
+
+    75% {
+        opacity: .5;
+        max-height: 100px;
+    }
+
+    100% {
+        opacity: 1;
+        max-height: 400px;
+    }
+}
+
+
+
